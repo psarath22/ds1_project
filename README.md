@@ -23,7 +23,6 @@ This project is a collaborative effort by group-17 for the course MTH208. We hav
 - Wireless Speakers
 
 ## Contents
-- **Dump**: This file serves as a repository for various project members' individual work files.
 - **Cleaned_Categories**: Contains cleaned data for the 17 categories selected for analysis.
 - **Final_codes**: Includes all the final codes for the main project.
 - **URLs**: Contains all URLs related to the 17 categories.

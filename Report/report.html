@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Sarath Kumar, Yash, Saee , Mayuresh">
+
+<title>Project Report - Group 17</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="report_files/libs/quarto-html/quarto.js"></script>
+<script src="report_files/libs/quarto-html/popper.min.js"></script>
+<script src="report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="report_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="report_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Project Report - Group 17</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Sarath Kumar, Yash, Saee , Mayuresh </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="acknowledgement" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgement">Acknowledgement</h2>
+<p><em>We are grateful to our professor, Dr.&nbsp;Dootika Vats, for giving us the opportunity to work on the Data Science project on</em> <strong>“DECODING BOAT LIFESTYLE”</strong><em>. With Dr.&nbsp;Dootika Vats guidance, we were able to complete the project on time and with our best efforts. This experience has been incredible for our team, allowing us to learn and work together collaborately.</em></p>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<section id="about-consumer-electronics-and-accessories" class="level3">
+<h3 class="anchored" data-anchor-id="about-consumer-electronics-and-accessories">1.1 About Consumer Electronics and Accessories</h3>
+<p>When the words “Consumer Electronics and Accessories” are mentioned, our minds often conjure images of a vast array of cutting-edge gadgets and technological innovations that have become an integral part of our daily lives. Consumer electronics and accessories encompass a diverse range of products, including home audio systems, earbuds, smartwatches, chargers, timers, and car accessories, among others. This industry has experienced significant growth in recent years, driven by the increasing demand for sophisticated, feature-rich devices that cater to the evolving needs and preferences of modern consumers.</p>
+<p>The market for consumer electronics and accessories is characterized by:</p>
+<ul>
+<li><p>T<em>echnological innovation and advancement</em></p></li>
+<li><p><em>Dynamic consumer preferences and behavior</em></p></li>
+<li><p><em>Intense competition among industry players</em></p></li>
+<li><p><em>Evolving trends and patterns in product design and functionality</em></p></li>
+</ul>
+</section>
+<section id="problem-statement" class="level3">
+<h3 class="anchored" data-anchor-id="problem-statement">1.2 Problem Statement</h3>
+<p><em>In this project, the focus is on developing a streamlined approach to assist consumers in finding suitable products on the Boat website. By leveraging data science techniques, the project aims to curate a comprehensive final dataset encompassing essential product attributes, including price, reviews, ratings, and other relevant factors. This initiative is aimed at reducing the time and effort consumers spend on the website, allowing them to access a consolidated dataset that expedites their decision-making process and enhances their overall shopping experience.</em></p>
+</section>
+<section id="project-motivation-and-objective" class="level3">
+<h3 class="anchored" data-anchor-id="project-motivation-and-objective">1.3 project Motivation and Objective</h3>
+<p>Our project is driven by the growing demand for data-driven insights in the consumer electronics and accessories industry. By analyzing data from Boat’s official website and Kaggle, we aim to uncover crucial market trends and consumer preferences across various product categories. Our objective is to provide actionable recommendations for businesses, enabling them to make informed decisions regarding product development, marketing strategies, and long-term growth in this competitive market landscape.</p>
+</section>
+</section>
+<section id="about-our-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="about-our-dataset">2. About our dataset</h2>
+<section id="source-of-our-data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="source-of-our-data-collection">2.1 Source of our data collection</h3>
+<section id="boat-lifestyles-official-website" class="level4">
+<h4 class="anchored" data-anchor-id="boat-lifestyles-official-website">1.Boat Lifestyle’s Official Website:</h4>
+<p>Data was collected directly from Boat Lifestyle’s official website, focusing on various consumer electronics and accessories such as home audio systems, smartwatches, chargers, timers, and other relevant products.</p>
+</section>
+<section id="kaggle-datasets-amazon-earbuds" class="level4">
+<h4 class="anchored" data-anchor-id="kaggle-datasets-amazon-earbuds">2. Kaggle Datasets (<em>Amazon earbuds</em>):</h4>
+<p>Information on Amazon earbuds was collected from relevant datasets available on Kaggle, contributing valuable insights and data specific to the earbuds segment within the consumer electronics and accessories market.</p>
+</section>
+</section>
+<section id="data-set-variables" class="level3">
+<h3 class="anchored" data-anchor-id="data-set-variables">2.2 Data Set Variables</h3>
+<p><u><strong>There are two final datasets: one for Boat Lifestyle and another for Amazon earbuds</strong></u>.</p>
+<ul>
+<li><strong>boat dataset:</strong> <em>The dataset we collected is “Big_Frame.csv” which is a CSV file that contains complete details about 585 observations (or products) with 13 variables. NA’s have been introduced in some instances where the value is not provided.</em></li>
+</ul>
+<!-- -->
+<ul>
+<li><strong>Amazon earbuds:</strong> <em>We collected detailed information about the Amazon earbuds, including various product features and have complete details of 72 observations (or products) with 8 varaibles . The dataset has information on several earbud products, with specific details about each product.</em></li>
+</ul>
+<section id="categorical-variables" class="level4">
+<h4 class="anchored" data-anchor-id="categorical-variables">2.2.1 Categorical Variables</h4>
+<ol type="1">
+<li><p><strong>ProductName:</strong> The specific name or title of the product as listed on the Boat website, aiding in its identification and differentiation from other items.</p></li>
+<li><p><strong>Country_of_Origin:</strong> The country where the product is manufactured or produced, indicating its source or place of origin.</p></li>
+<li><p><strong>Category:</strong> denotes the product’s classification as either “Wireless” or “Wired,” distinguishing between the two types based on their connectivity features. This categorical text variable allows consumers to identify and select products based on their preferred connectivity type.</p></li>
+<li><p><strong>Type:</strong> Type represents the specific classification or group to which the product belongs, aiding in the organization and segmentation of products based on their shared characteristics or functionalities. This categorical variable assists consumers in easily navigating and identifying products within their preferred product segments.</p></li>
+<li><p><strong>Model_Name<em>(in Amazon earbuds dataset)</em></strong>:Model_Name represents the specific name or identifier assigned to the product by the manufacturer, allowing for easy identification and differentiation of product variations or versions.</p></li>
+<li><p><strong>AiredDate<em>(in Amazon earbuds dataset)</em></strong>:AiredDate signifies the date on which the product was released or made available for purchase, providing information about the product’s launch or introduction to the market.</p></li>
+</ol>
+</section>
+<section id="numerical-variables" class="level4">
+<h4 class="anchored" data-anchor-id="numerical-variables">2.2.2 Numerical Variables</h4>
+<ol type="1">
+<li><p><strong>ProductRating<em>(common in both Datasets)</em></strong>: ProductRating is the average customer satisfaction score, indicating the overall quality of the product based on feedback.</p></li>
+<li><p><strong>ReviewCount<em>(common in both Datasets)</em></strong>: ReviewCount represents customer engagement and popularity, determined by the total number of customer reviews or feedback received.</p></li>
+<li><p><strong>Sale_price</strong>: Sale_price displays the current selling price, incorporating any ongoing promotions or discounts, providing the present cost of the product.</p></li>
+<li><p><strong>Regular_Price</strong>: Regular_Price denotes the original retail value before any discounts or special offers, serving as the standard market price for the product.</p></li>
+<li><p><strong>Discount_Percentage<em>(common in both Datasets)</em></strong>: Discount_Percentage reveals the percentage by which the regular price has been reduced, demonstrating the amount of discount provided to customers.</p></li>
+<li><p><strong>ColourOptions</strong>: ColourOptions represents the total number of color choices or options available for the product, indicating the range of visual variants that consumers can choose from. This numerical variable provides insights into the diversity of color selections offered for the product, allowing consumers to understand the available options and make informed decisions based on their preferences.</p></li>
+<li><p><strong>Warranty:</strong>Warranty signifies the duration, in years, of the warranty offered for the product, providing assurance to customers regarding product quality and support. This numerical variable denotes the specific length of time for which the product is covered under the warranty.</p></li>
+<li><p><strong>Charging_Time:</strong> The duration required for the product to be fully charged, indicating the time needed for the charging process, in hours.</p></li>
+<li><p><strong>Charge_Duration:</strong> The duration for which the product can remain operational or provide power after being fully charged, indicating its battery life or usage duration, in days.</p></li>
+<li><p><strong>Amazon_Price<em>(in Amazon earbuds dataset)</em></strong>: Amazon_Price signifies the price at which the product is listed for sale on the Amazon website, representing the cost of the product for potential buyers.</p></li>
+<li><p><strong>MRP<em>(in Amazon earbuds dataset)</em></strong>: MRP (Maximum Retail Price) denotes the highest price at which the product can be sold to customers, providing the upper limit for product pricing as determined by the manufacturer or retailer.</p></li>
+<li><p><strong>Batteries<em>(in Amazon earbuds dataset)</em></strong>:Batteries represent the number of batteries required for the earbuds, indicating the power source needed for their operation.</p></li>
+</ol>
+</section>
+</section>
+<section id="dataset-details" class="level3">
+<h3 class="anchored" data-anchor-id="dataset-details"><strong>2.3 Dataset Details</strong></h3>
+<section id="boat-dataset" class="level4">
+<h4 class="anchored" data-anchor-id="boat-dataset">2.3.1 Boat Dataset</h4>
+<ul>
+<li><p><strong>Name:</strong> Big_Frame.csv</p></li>
+<li><p><strong>Observations:</strong> 585 products</p></li>
+<li><p><strong>Variables:</strong> 13</p></li>
+</ul>
+</section>
+<section id="amazon-earbuds-dataset" class="level4">
+<h4 class="anchored" data-anchor-id="amazon-earbuds-dataset">2.3.2 Amazon Earbuds Dataset</h4>
+<ul>
+<li><p><strong>Observations:</strong> 72 products</p></li>
+<li><p><strong>Variables:</strong> 8</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="obtaining-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="obtaining-the-data">3. Obtaining The Data</h2>
+<section id="complete-details-of-the-data-collection-sources" class="level3">
+<h3 class="anchored" data-anchor-id="complete-details-of-the-data-collection-sources">3.1. Complete details of the Data collection sources</h3>
+<section id="boat-lifestyles-official-website-boat-official-site" class="level4">
+<h4 class="anchored" data-anchor-id="boat-lifestyles-official-website-boat-official-site">3.1.1. Boat Lifestyle’s Official Website (<a href="https://www.boat-lifestyle.com">boAt official site</a>):</h4>
+<p><em>Data was collected directly from Boat Lifestyle’s official website, focusing on various consumer electronics and accessories such as home audio systems, smartwatches, chargers, timers, and other relevant products. The website provided comprehensive information crucial for our analysis.</em></p>
+<p><img src="images/Screenshot%202023-11-09%20165125-01.png" class="img-fluid"></p>
+<p><em>We scraped all 18 categories that are given on this website.</em></p>
+</section>
+<section id="kaggle-datasets-amazon-earbuds-1" class="level4">
+<h4 class="anchored" data-anchor-id="kaggle-datasets-amazon-earbuds-1">3.1.2. Kaggle Datasets (<a href="https://www.kaggle.com/datasets/arvindkhoda/boat-earbudsamazon">amazon earbuds</a>):</h4>
+<p><em>Information on Amazon earbuds was collected from relevant datasets available on Kaggle, contributing valuable insights and data specific to the earbuds segment within the consumer electronics and accessories market.</em></p>
+<p><img src="images/Screenshot%202023-11-09%20171802.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="libraries-used-during-the-data-collection-process" class="level3">
+<h3 class="anchored" data-anchor-id="libraries-used-during-the-data-collection-process">3.2. Libraries used during the Data collection Process</h3>
+<ul>
+<li><p>tidyverse</p></li>
+<li><p>rvest</p></li>
+<li><p>selenium: <em>This library is used for automating web browser interaction from Python. It allows you to simulate a user’s interaction with the browser, including navigating to webpages, interacting with web elements, and scraping data.</em></p></li>
+<li><p>time: <em>This library is used to add delays or pauses in the execution of the code. It is used in this script to provide time for the page to load more content.</em></p></li>
+</ul>
+</section>
+<section id="problems-faced-during-this-process" class="level3">
+<h3 class="anchored" data-anchor-id="problems-faced-during-this-process">3.3. Problems Faced during this process</h3>
+<p>During the scraping process of the Boat website, our group encountered limitations due to the website’s dynamic nature. We found that we were unable to extract more than 18 products from each web page, which hindered our data collection efforts.</p>
+<p><strong>dynamic nature of the website(webpage for a particular category looks similar to this)</strong></p>
+</section>
+<section id="web-scraping-approach" class="level3">
+<h3 class="anchored" data-anchor-id="web-scraping-approach">3.4. Web Scraping Approach</h3>
+<p><img src="images/Screenshot%202023-11-09%20180040.png" class="img-fluid"></p>
+<section id="utilization-of-selenium" class="level4">
+<h4 class="anchored" data-anchor-id="utilization-of-selenium">Utilization of Selenium</h4>
+<p>The decision to employ Selenium for web scraping was motivated by the dynamic nature of the target website. Traditional scraping methods were insufficient due to the website’s dependence on JavaScript for content rendering. Additionally, RSelenium was considered but found to be outdated and less suitable for the task.</p>
+</section>
+<section id="dynamic-content-loading" class="level4">
+<h4 class="anchored" data-anchor-id="dynamic-content-loading">Dynamic Content Loading</h4>
+<p>During the scraping process, a notable observation was made regarding the website’s dynamic content loading mechanism. Specifically, a loader was present at approximately 3.5 times the browser’s height from the bottom of the page. This loader introduced a delay of 3-5 seconds to load additional products. Selenium provided the necessary functions to effectively handle these dynamic loading behaviors.</p>
+</section>
+<section id="data-collection-and-cleaning" class="level4">
+<h4 class="anchored" data-anchor-id="data-collection-and-cleaning">Data Collection and Cleaning</h4>
+<p>After scraping the URLs for each category, the data was subsequently collected and cleaned using R codes. These R codes are available in this repository. The cleaned data is organized and made available for further analysis.</p>
+</section>
+<section id="amazon-dataset-comparison" class="level4">
+<h4 class="anchored" data-anchor-id="amazon-dataset-comparison">Amazon Dataset Comparison</h4>
+<p>In addition to scraping and cleaning data from the target website, an Amazon dataset from Kaggle was also scraped and cleaned. This dataset will be used for comparisons and analysis, as per the project’s requirements.</p>
+</section>
+</section>
+</section>
+<section id="cleaning-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-the-data">4. Cleaning the Data</h2>
+<p>The cleaning of data is a crucial step in ensuring the accuracy and reliability of the information for analysis. Below are the steps taken for cleaning the collected datasets from Boat Lifestyle’s official website and Kaggle (Amazon earbuds).</p>
+<section id="cleaning-boat-lifestyle-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-boat-lifestyle-dataset">4.1 Cleaning Boat Lifestyle Dataset</h3>
+<ul>
+<li><p><strong>The Libraries we used:</strong> dplyr</p></li>
+<li><p><strong>Handling Missing Values:</strong> Some data was missing in the dataset, so we left those parts as ‘NA’ without putting any specific value. This helps to keep things clear, showing that we don’t have information for those parts. We did this to keep the data accurate and make it clear where info was missing</p></li>
+<li><p><strong>Data Type Conversion:</strong></p>
+<p>To bolster the precision of our analysis, a thorough examination and adjustment of data types were carried out for key variables. The following variables, including those related to product identification and categorization, underwent conversion to the numeric data type:</p>
+<ul>
+<li><p><strong>ProductRating:</strong> Now represented as a numeric variable, allowing for a more nuanced analysis of customer satisfaction scores.</p></li>
+<li><p><strong>ReviewCount:</strong> Transformed into a numeric format to enable comprehensive quantitative evaluations of customer engagement and product popularity.</p></li>
+<li><p><strong>Sale_Price:</strong> Converted to a numeric type, providing a solid foundation for precise calculations involving the current selling prices.</p></li>
+<li><p><strong>Regular_Price:</strong> Transitioned to a numeric format to maintain consistency in handling the original retail values before any discounts.</p></li>
+<li><p><strong>Discount_Percentage:</strong> Now stored as a numeric variable, facilitating numerical computations related to discount percentages.</p></li>
+<li><p><strong>ColourOptions:</strong> Converted to a numeric format, streamlining the analysis of the total number of color choices available for each product.</p></li>
+<li><p><strong>Warranty:</strong> Now represented numerically, indicating the duration of warranty coverage in years for each product.</p></li>
+<li><p><strong>Charging_Time:</strong> Converted to a numeric format for an accurate measurement of the duration required for product charging, expressed in hours.</p></li>
+<li><p><strong>Charging_Duration:</strong> Now stored as a numeric variable, signifying the operational duration or battery life after a full charge, measured in days.</p></li>
+<li><p>Only the data types of the variables mentioned earlier, including ProductRating, ReviewCount, Sale_Price, Regular_Price, Discount_Percentage, ColourOptions, Warranty, Charging_Time, and Charging_Duration, were changed during this process.</p></li>
+</ul></li>
+<li><p><strong>Biases found in the Initial Dataset:</strong></p></li>
+</ul>
+<p>Some values in the ‘Charging_Time’ variable were originally obtained in hours, while others were in minutes. We standardized all these values to be uniformly represented in hours. Similarly, for the ‘Charging_Duration’ variable, values were initially obtained in hours and days. We converted all these values to be consistently expressed in days.</p>
+</section>
+<section id="cleaning-amazon-earbuds-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-amazon-earbuds-dataset">4.2 Cleaning Amazon Earbuds Dataset</h3>
+<p>The dataset obtained from Kaggle, containing information on Amazon earbuds, underwent similar cleaning processes:</p>
+<ul>
+<li><p><strong>The Libraries we used:</strong> dplyr</p></li>
+<li><p><strong>Handling Missing Values:</strong> Just like the Boat Lifestyle dataset, we managed missing values by introducing NA’s. In this step, we dropped observations where ‘MRP’ or ‘rating’ was zero and also if Batteries is not a number since they are crucial for our analysis.</p></li>
+</ul>
+<p><strong>Data Type Conversion:</strong>During the process of converting data types, I specifically changed the following variables to numeric:</p>
+<ul>
+<li><p><strong>Discount_Percentage:</strong> Converted to numeric for precise calculations related to discount percentages.</p></li>
+<li><p><strong>Amazon_Price:</strong> Now stored as a numeric variable, facilitating accurate numerical analysis of the product’s price on Amazon.</p></li>
+<li><p><strong>ProductRating:</strong> Converted to numeric for a more detailed analysis of customer satisfaction scores.</p></li>
+<li><p><strong>ReviewCount:</strong> Transformed into a numeric format to enable comprehensive quantitative evaluations of customer engagement and product popularity.</p></li>
+<li><p><strong>MRP:</strong> Now represented as a numeric variable for consistent handling of maximum retail prices.</p></li>
+<li><p><strong>Batteries:</strong> Converted to numeric, allowing for numerical computations related to the number of batteries required for the earbuds.</p></li>
+<li><p>Only the data types of the variables mentioned earlier, including ProductRating, ReviewCount, Sale_Price, Regular_Price, Discount_Percentage, ColourOptions, Warranty, Charging_Time, and Charging_Duration, were changed during this process.</p></li>
+</ul>
+<p><em>After fixing and changing data, we made the final table. It’s all neat now, ready for looking deep, doing math, and making pictures. We can now dig in, do number stuff, and draw to find important things from the data.</em></p>
+</section>
+</section>
+<section id="interesting-questions" class="level2">
+<h2 class="anchored" data-anchor-id="interesting-questions">5. Interesting Questions</h2>
+<ul>
+<li><p>Is there any relation between rating of product&nbsp;and&nbsp;price?</p></li>
+<li><p>which product has&nbsp;highest&nbsp;Product rating and why?</p></li>
+<li><p>Which is most popular product&nbsp;of&nbsp;Boat?</p></li>
+<li><p>If someone wants to buy earbuds and having budget below 5k then which is good option among wireless and wired category?</p></li>
+<li><p>which price segment is mainly&nbsp;focused by boat?</p></li>
+</ul>
+</section>
+<section id="important-visualizations" class="level2">
+<h2 class="anchored" data-anchor-id="important-visualizations">6. Important Visualizations</h2>
+<section id="scatterplot-of-product-rating-vs-sale_price" class="level3">
+<h3 class="anchored" data-anchor-id="scatterplot-of-product-rating-vs-sale_price">6.1. Scatterplot of Product Rating vs Sale_Price</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
+</section>
+<section id="histogram-of-product-ratings-of-some-products" class="level3">
+<h3 class="anchored" data-anchor-id="histogram-of-product-ratings-of-some-products">6.2. Histogram of Product Ratings of some Products</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="histogram-of-review-counts-of-some-products" class="level3">
+<h3 class="anchored" data-anchor-id="histogram-of-review-counts-of-some-products">6.3. Histogram of Review Counts of some Products</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="histogram-of-discount-percentages" class="level3">
+<h3 class="anchored" data-anchor-id="histogram-of-discount-percentages">6.4. Histogram of Discount percentages</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="box-plot-of-product-ratings-for-wired-and-wireless-earbuds" class="level3">
+<h3 class="anchored" data-anchor-id="box-plot-of-product-ratings-for-wired-and-wireless-earbuds">6.5. box plot of Product Ratings for wired and wireless earbuds</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="scatterplot-for-sale_price-vs-discount-percentage-to-find-the-relation-between-sale_price-and-discount-percentage" class="level3">
+<h3 class="anchored" data-anchor-id="scatterplot-for-sale_price-vs-discount-percentage-to-find-the-relation-between-sale_price-and-discount-percentage">6.6. Scatterplot for Sale_Price vs Discount percentage to find the relation between Sale_price and Discount Percentage</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="histogram-of-various-product-types" class="level3">
+<h3 class="anchored" data-anchor-id="histogram-of-various-product-types">6.7. Histogram of Various Product Types</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">7. Conclusions</h2>
+<p>The comprehensive analysis of Boat Lifestyle’s product portfolio, supported by the Shiny app and insights from the Amazon dataset, has unveiled strategic marketing patterns and shed light on the company’s pricing strategies.</p>
+<ol type="1">
+<li><p><strong>Main Products and Pricing Strategy:</strong></p>
+<ul>
+<li>Our investigation highlighted that audio systems and smartwatches are the primary products sold by Boat Lifestyle. A striking observation from the analysis is the inverse relationship between sale price and discount percentage. Notably, wired headphones receive the highest discounts, suggesting a strategic approach to pricing.</li>
+</ul></li>
+<li><p><strong>Discount Allocation by Product Type:</strong></p>
+<ul>
+<li>The graph reveals that wireless earbuds, despite being priced lower than other products, receive higher discount percentages. This aligns with a potential marketing strategy where Boat aims to attract consumers with competitive pricing, coupled with substantial discounts, possibly to gain market share in this product category.</li>
+</ul></li>
+<li><p><strong>Marketing Strategy of High Discount Percentages:</strong></p>
+<ul>
+<li>An intriguing observation is the concentration of discount percentages around 50-60%. This consistent discount range suggests a deliberate and prominent market strategy employed by Boat. The company may be strategically balancing product pricing to appeal to a wide range of consumers without compromising perceived value.</li>
+</ul></li>
+<li><p><strong>Dynamic Pricing of Earbuds:</strong></p>
+<ul>
+<li>The notably lower prices of earbuds compared to other products, coupled with higher discount percentages, indicate a distinct marketing strategy. Boat appears to position earbuds as an affordable entry point, strategically increasing the sale price while offering significant discounts to attract cost-conscious consumers.</li>
+</ul></li>
+<li><p><strong>Target Audience and Product Display:</strong></p>
+<ul>
+<li>Boat’s strategic product display aligns with targeting an audience with budgets between 0 and 5000. By showcasing products with ratings between 4.5 and 5, Boat is likely aiming to appeal to discerning consumers seeking high-rated products within budget constraints.</li>
+</ul></li>
+<li><p><strong>Balancing Discounts for Perceived Value:</strong></p>
+<ul>
+<li>The observed marketing strategy of offering moderate discounts suggests that Boat aims to strike a balance between perceived value and affordability. This approach can contribute to maintaining a premium brand image while making products accessible to a broader consumer base.</li>
+</ul></li>
+</ol>
+<p>In conclusion, Boat Lifestyle’s marketing and pricing strategies, as revealed through our analysis, showcase a deliberate and calculated approach. The nuanced balance between sale price, discount percentages, and product ratings aligns with a strategic effort to capture a diverse consumer market. These findings not only provide insights into Boat’s current positioning but also offer valuable considerations for future marketing and pricing decisions.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">8. References</h2>
+<section id="sources-of-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="sources-of-the-data">Sources of the data:</h3>
+<ul>
+<li><p>Boat Lifestyle’s Official Website (<a href="https://www.boat-lifestyle.com">boAt official site</a>)</p></li>
+<li><p>Kaggle Datasets (<a href="https://www.kaggle.com/datasets/arvindkhoda/boat-earbudsamazon">amazon earbuds</a>)</p></li>
+</ul>
+</section>
+<section id="resources-for-python-selenium-library" class="level3">
+<h3 class="anchored" data-anchor-id="resources-for-python-selenium-library">resources for Python selenium library:</h3>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/selenium-python-tutorial/">learn selenium</a></li>
+</ul>
+</section>
+<section id="to-know-more-about-boat" class="level3">
+<h3 class="anchored" data-anchor-id="to-know-more-about-boat">To know more about boat</h3>
+<ul>
+<li><a href="https://buildd.co/marketing/boat-marketing-strategy">boat marketing strategy</a></li>
+</ul>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
